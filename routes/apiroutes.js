@@ -23,42 +23,6 @@ app.post('/notes', function (req, res){
     res.json(db)
 })
 
-// const { title, text } = req.body;
-// let newNotes = {
-//     title,
-//     text,
-//     id: Math.floor(Math.random() * 1000)
-// };
-
-// app.post('/notes', function (req, res){
-
-//   const { title, text } = req.body;
-//   if (req.body) {
-//     let newNotes = {
-//         title,
-//         text,
-//         id: Math.floor(Math.random() * 1000)
-//        }
-//        fs.readFile('./db/db.json', 'utf8', (err, data) => {
-//         console.log('Request to add post note recieved')
-//         if (err) {
-//             console.error(err);
-//           } else {
-//             const parsedData = JSON.parse(data);
-//             parsedData.push(newNotes);
-//             fs.writeFileSync('./db/db.json', JSON.stringify(parsedData),function(err){
-//                 if(err) throw err;
-//             }) 
-//             console.log('post', parsedData)
-//             res.json('parsedData')
-//           }    
-//     });
-//   } else {
-//   res.json('parsedData')
-//   }
-// });
-
-
 app.delete('/notes/:id', function (req, res){
     let deletenote = req.params.id
     let delNotes = db.filter(note => note.id != deletenote) 
