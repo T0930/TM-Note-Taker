@@ -1,17 +1,17 @@
-
+const express = require('express');
 const fs = require('fs');
-const app = require('express').Router()
-const db = require("../db/db.json");
+const app = express();
+let db = require("../db/db.json");
 
-app.get('/api/notes', function (req, res){
+app.get('/notes', function (req, res){
     db = JSON.parse(fs.readFileSync('./db/db.json')) || []
     console.log('get', db)
     res.json(db)
 })
 
-app.post('/api/notes', function (req, res){
+app.post('/notes', function (req, res){
     let newNote = {
-        id: Math.floor(math.random() * 1000),
+        id: Math.floor(Math.random() * 1000),
         title: req.body.title,
         text: req.body.text
     }
@@ -23,17 +23,47 @@ app.post('/api/notes', function (req, res){
     res.json(db)
 })
 
-app.delete('/api/notes/:id', function (req, res){
+// const { title, text } = req.body;
+// let newNotes = {
+//     title,
+//     text,
+//     id: Math.floor(Math.random() * 1000)
+// };
+
+// app.post('/notes', function (req, res){
+
+//   const { title, text } = req.body;
+//   if (req.body) {
+//     let newNotes = {
+//         title,
+//         text,
+//         id: Math.floor(Math.random() * 1000)
+//        }
+//        fs.readFile('./db/db.json', 'utf8', (err, data) => {
+//         console.log('Request to add post note recieved')
+//         if (err) {
+//             console.error(err);
+//           } else {
+//             const parsedData = JSON.parse(data);
+//             parsedData.push(newNotes);
+//             fs.writeFileSync('./db/db.json', JSON.stringify(parsedData),function(err){
+//                 if(err) throw err;
+//             }) 
+//             console.log('post', parsedData)
+//             res.json('parsedData')
+//           }    
+//     });
+//   } else {
+//   res.json('parsedData')
+//   }
+// });
+
+
+app.delete('/notes/:id', function (req, res){
     let deletenote = req.params.id
-    let newNotes = db.filter(note => note.id != deletenote) 
+    let delNotes = db.filter(note => note.id != deletenote) 
 
-    // for (let i = 0; i < db.length: i++) {
-    //     if (db[i].id != deletenote){
-    //         newNotes.push(db[i])
-    //     }
-    // }
-
-    db = newNotes
+    db = delNotes
     fs.writeFileSync('./db/db.json', JSON.stringify(db),function(err){
         if(err) throw err;
     }) 
