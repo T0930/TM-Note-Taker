@@ -12,10 +12,12 @@
 * User is able to delete previous notes by clicking the red trash-can icon.
 
 # Screen Shot:  
-![Preview](will update)
-![Preview](will update)
-![Preview](will update)
-![Preview](will update)
+![Preview](https://github.com/T0930/TM-Note-Taker/blob/main/images/notelanding.png)
+![Preview](https://github.com/T0930/TM-Note-Taker/blob/main/images/noteblank.png)
+![Preview](https://github.com/T0930/TM-Note-Taker/blob/main/images/noteentry.png)
+![Preview](https://github.com/T0930/TM-Note-Taker/blob/main/images/noteretrieve.png)
 
 # Deployed Website:
+[TM-Note-Taker-Repo](https://github.com/T0930/TM-Note-Taker)
+#
 [TM-Note-Taker](https://tm-note-taker.herokuapp.com/)
