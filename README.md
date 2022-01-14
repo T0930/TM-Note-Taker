@@ -10,6 +10,7 @@
 * Once a new note has been saved, the note will appear on the left side of the application.
 * The user can click on the recently added note which will display the title along with the text field that was previously entered.
 * User is able to delete previous notes by clicking the red trash-can icon.
+* Deployed application hosted on Heroku (Link at bottom of README).
 
 # Screen Shot:  
 ## Landing Page:
